@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import { Switch, Route } from "react-router-dom";
 import HeroSection from "./components/Home/HeroSection/HeroSection";
 import Home from "./components/Home/Home";
+import "./App.css";
 
 const App = () => {
   return (

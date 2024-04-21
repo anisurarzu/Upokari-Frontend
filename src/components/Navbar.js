@@ -8,18 +8,15 @@ import {
 import { GiHamburgerMenu } from "react-icons/gi";
 
 import { NavLink } from "react-router-dom";
-
+import logo from "../images/logoshirley_300x.png";
 const Navbar = () => {
   const [showMediaIcons, setShowMediaIcons] = useState(false);
   return (
     <>
-      <nav className="main-nav">
+      <nav className="main-nav border-b">
         {/* 1st logo part  */}
         <div className="logo">
-          <h2>
-            <span>Upokari</span>
-            <span></span>
-          </h2>
+          <img src={logo} alt="" />
         </div>
 
         {/* 2nd menu part  */}
