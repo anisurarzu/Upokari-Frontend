@@ -9,14 +9,17 @@ import { GiHamburgerMenu } from "react-icons/gi";
 
 import { NavLink } from "react-router-dom";
 import logo from "../images/logoshirley_300x.png";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 const Navbar = () => {
   const [showMediaIcons, setShowMediaIcons] = useState(false);
   return (
     <>
       <nav className="main-nav border-b">
         {/* 1st logo part  */}
-        <div className="logo">
-          <img src={logo} alt="" />
+        <div className="logo cursor-pointer ">
+          <Link to="/">
+            <img src={logo} alt="" />
+          </Link>
         </div>
 
         {/* 2nd menu part  */}
@@ -36,6 +39,9 @@ const Navbar = () => {
             </li>
             <li>
               <NavLink to="/contact">অন্যান্য</NavLink>
+            </li>
+            <li>
+              <NavLink to="/login">Log In</NavLink>
             </li>
           </ul>
         </div>

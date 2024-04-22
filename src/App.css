@@ -2,6 +2,7 @@
 
 
 
+
         
 * {
   margin: 0;
@@ -139,6 +140,9 @@ li {
   text-align: center;
 }
 
+/* home page css */
+
+/* hero section */
 .first-div {
 
   background-image: url("./images/slider-thumba4_79e7c372-882c-4202-aacc-e22697196e37.webp");
@@ -147,6 +151,32 @@ li {
   background-size: contain;
   background-repeat: no-repeat;
   
+}
+.second-div {
+
+  background-image: url("./images/slider-thumb5_7e06467d-f048-4715-afd8-49df26eef79a.png");
+  height: 500px;
+  width: 400px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  
+}
+
+/* middle section */
+
+.middle-div-one{
+  background-image: url("./images/Untitled-1_703368e4-8b89-48eb-832e-13c3d740cf28.jpeg");
+  height: 500px;
+  width: 570px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.middle-div-two{
+  background-image: url("./images/banner02.jpeg");
+  height: 500px;
+  width: 570px;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 
