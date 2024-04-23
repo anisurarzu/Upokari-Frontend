@@ -4,10 +4,11 @@ import icon1 from "../../../images/icon01_small.png";
 import icon2 from "../../../images/icon02_small.png";
 import icon3 from "../../../images/icon03_small.png";
 import icon4 from "../../../images/icon04_small.png";
-import { Button } from "primereact/button";
+
 import { Tag } from "primereact/tag";
 
 import { Carousel } from "primereact/carousel";
+import { Button } from "primereact/button";
 
 export default function MiddleHome() {
   const [products, setProducts] = useState([

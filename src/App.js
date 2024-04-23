@@ -1,28 +1,35 @@
 import React from "react";
+import { Switch, Route, Redirect } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import Navbar from "./components/Navbar";
-import { Switch, Route } from "react-router-dom";
 import HeroSection from "./components/Home/HeroSection/HeroSection";
 import Home from "./components/Home/Home";
-import "./App.css";
-import { PrimeReactProvider, PrimeReactContext } from "primereact/api";
 import Login from "./Pages/Login/Login";
+import Registration from "./Pages/Login/Registration";
+import About from "./Pages/About/About";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
+import "./App.css";
 
 const App = () => {
   return (
-    <Switch>
-      <Route exact path="/">
-        <Home />
-      </Route>
-      <Route exact path="/login">
-        <Login />
-      </Route>
-
-      <Route path="/about">{/* <About /> */}</Route>
-
-      <Route path="/service">{/* <Service /> */}</Route>
-
-      <Route path="/contact">{/* <Contact /> */}</Route>
-    </Switch>
+    <div>
+      <Navbar />
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route exact path="/login">
+          <Login />
+        </Route>
+        <Route exact path="/registration">
+          <Registration />
+        </Route>
+        <PrivateRoute path="/about" component={About} />
+      </Switch>
+      <ToastContainer />
+    </div>
   );
 };
 

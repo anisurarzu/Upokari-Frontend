@@ -7,7 +7,7 @@ import Fotter from "../Fotter";
 export default function Home() {
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
       <HeroSection />
       <MiddleHome />
       <Fotter />

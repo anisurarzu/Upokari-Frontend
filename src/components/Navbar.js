@@ -9,9 +9,19 @@ import { GiHamburgerMenu } from "react-icons/gi";
 
 import { NavLink } from "react-router-dom";
 import logo from "../images/logoshirley_300x.png";
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import { Link, useHistory } from "react-router-dom/cjs/react-router-dom.min";
 const Navbar = () => {
   const [showMediaIcons, setShowMediaIcons] = useState(false);
+  const history = useHistory();
+
+  const isAuthenticated = !!localStorage.getItem("token");
+  const handleLogout = () => {
+    // Clear authentication token from local storage
+    localStorage.removeItem("token");
+
+    // Redirect to the login page
+    history.push("/login");
+  };
   return (
     <>
       <nav className="main-nav border-b">
@@ -38,11 +48,15 @@ const Navbar = () => {
               <NavLink to="/contact">যোগাযোগ</NavLink>
             </li>
             <li>
-              <NavLink to="/contact">অন্যান্য</NavLink>
+              <NavLink to="/about">About</NavLink>
+            </li>
+            <li>
+              <NavLink to="/registration">প্রবেশ করুন</NavLink>
             </li>
             <li>
               <NavLink to="/login">Log In</NavLink>
             </li>
+            {isAuthenticated && <li onClick={handleLogout}>Log Out</li>}
           </ul>
         </div>
 
