@@ -31,6 +31,8 @@ export default function Login() {
 
         // Redirect to the intended destination or dashboard if no destination is set
         history.replace(location.state?.from || "/dashboard");
+        // Reload the page to reflect the login state
+        window.location.reload();
       }
 
       // Handle successful login

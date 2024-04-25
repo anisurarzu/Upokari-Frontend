@@ -22,7 +22,7 @@ export default function Registration() {
         password,
       });
       if (response?.status === 201) {
-        toast.success("Successfully Registered!");
+        toast.success("Verification email sent. Please check your inbox!");
       } else {
         toast.error(response.data);
       }

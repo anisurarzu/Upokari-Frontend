@@ -6,22 +6,29 @@ import {
   FaYoutubeSquare,
 } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { NavLink, Link, useHistory } from "react-router-dom";
 
-import { NavLink } from "react-router-dom";
 import logo from "../images/logoshirley_300x.png";
-import { Link, useHistory } from "react-router-dom/cjs/react-router-dom.min";
+
 const Navbar = () => {
   const [showMediaIcons, setShowMediaIcons] = useState(false);
   const history = useHistory();
 
+  // Check if the user is authenticated
   const isAuthenticated = !!localStorage.getItem("token");
+
+  // Handle logout
   const handleLogout = () => {
     // Clear authentication token from local storage
     localStorage.removeItem("token");
 
     // Redirect to the login page
     history.push("/login");
+
+    // Reload the page to reflect the logout state
+    window.location.reload();
   };
+
   return (
     <>
       <nav className="main-nav border-b">
@@ -53,9 +60,12 @@ const Navbar = () => {
             <li>
               <NavLink to="/registration">প্রবেশ করুন</NavLink>
             </li>
-            <li>
-              <NavLink to="/login">Log In</NavLink>
-            </li>
+            {/* Conditionally render login or logout button based on authentication state */}
+            {!isAuthenticated && (
+              <li>
+                <NavLink to="/login">Log In</NavLink>
+              </li>
+            )}
             {isAuthenticated && <li onClick={handleLogout}>Log Out</li>}
           </ul>
         </div>
@@ -94,12 +104,6 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-
-      {/* hero section  */}
-      {/* <section className="hero-section">
-        <p>Welcome to </p>
-        <h1>Thapa Technical</h1>
-      </section> */}
     </>
   );
 };
